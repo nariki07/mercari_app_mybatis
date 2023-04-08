@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.domain.MediumCategory;
+import com.example.demo.domain.SmallCategory;
 import com.example.demo.service.SelectCategoryService;
 
 /**
@@ -31,11 +32,38 @@ public class SelectCategoryController {
 	 * @param largeCategoryId 大カテゴリID
 	 * @return 中カテゴリリスト
 	 */
-	@PostMapping("/getChildList")
+	@PostMapping("/getMiddleList")
 	@ResponseBody
 	public List<MediumCategory> setMiddle(@RequestBody String largeCategoryId){
-		List<MediumCategory> mediumCategoryList = selectCategoryService.findById(largeCategoryId);
+		List<MediumCategory> mediumCategoryList = selectCategoryService.findByBigId(largeCategoryId);
 		return mediumCategoryList;
 	}
 	
+	/**
+	 * 中カテゴリに紐づく小カテゴリを検索します.
+	 * 
+	 * @param mediumCategoryId 中カテゴリID
+	 * @return 小カテゴリリスト
+	 */
+	@PostMapping("/getSmallList")
+	@ResponseBody
+	public List<SmallCategory> setSmall(@RequestBody String mediumCategoryId){
+		List<SmallCategory> smallCategoryList = selectCategoryService.findByMediumId(mediumCategoryId);
+		return smallCategoryList;
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
