@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/mybatis
+    username: postgres
+    password: postgres
+  jmx:
+    default-domain: mercari
+server:
+  servlet:
+    context-path: /mercari
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
