@@ -8,23 +8,17 @@ package com.example.demo.form;
  */
 public class SerchItemForm {
 
-	/** 名前 */
+	/* 名前 */
 	private String name;
-	/** 親カテゴリ名 */
-	private String bigName;
-	/** 子カテゴリ名 */
-	private String middleName;
-	/** 孫カテゴリID */
-	private String categoryId;
-	/** 孫カテゴリ名 */
-	private String smallName;
+	/* 小カテゴリID */
+	private String smallId;
 	/** ブランド名 */
 	private String brand;
-	
+
 	public SerchItemForm() {
-		
+
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -33,36 +27,12 @@ public class SerchItemForm {
 		this.name = name;
 	}
 
-	public String getBigName() {
-		return bigName;
+	public String getSmallId() {
+		return smallId;
 	}
 
-	public void setBigName(String bigName) {
-		this.bigName = bigName;
-	}
-
-	public String getMiddleName() {
-		return middleName;
-	}
-
-	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
-	}
-
-	public String getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
-	}
-
-	public String getSmallName() {
-		return smallName;
-	}
-
-	public void setSmallName(String smallName) {
-		this.smallName = smallName;
+	public void setSmallId(String smallId) {
+		this.smallId = smallId;
 	}
 
 	public String getBrand() {
@@ -75,8 +45,7 @@ public class SerchItemForm {
 
 	@Override
 	public String toString() {
-		return "SerchItemForm [name=" + name + ", bigName=" + bigName + ", middleName=" + middleName + ", categoryId="
-				+ categoryId + ", smallName=" + smallName + ", brand=" + brand + "]";
+		return "SerchItemForm [name=" + name + ", smallId=" + smallId + ", brand=" + brand + "]";
 	}
 
 }
