@@ -79,17 +79,24 @@
 				<button type="submit" class="btn btn-default"><i class="fa fa-angle-double-right"></i> search</button>
 			</form>
 		</div>
-
 		<!-- pagination -->
 		<div class="pages" th:if="${itemPage}">
 			<nav class="page-nav">
 				<ul class="pager" th:if="${itemPage.totalPages > 0}">
-					<li class="previous"><a
-							th:href="@{/(name=${name},category=${category},brand=${brand},page=${(itemPage.number + 1) - 1})}">&larr;
-							prev</a></li>
-					<li class="next"><a
-							th:href="@{/(name=${name},category=${category},brand=${brand},page=${(itemPage.number + 1) + 1 })}">next
-							&rarr;</a></li>
+					<form th:action="@{/serchItem}" method="post" th:object="${searchItemForm}" id="form">
+						<input type="hidden" name="name" th:value="*{name}">
+						<input type="hidden" name="smallId" th:value="*{smallId}">
+						<input type="hidden" name="brand" th:value="*{brand}">
+						<input type="hidden" name="page" th:value="${(itemPage.number + 1) -1 }">
+						<li class="previous"><button type="submit">prev&larr; </button></li> 
+					</form>
+					<form th:action="@{/serchItem}" method="post" th:object="${searchItemForm}" id="form">
+						<input type="hidden" name="name" th:value="*{name}">
+						<input type="hidden" name="smallId" th:value="*{smallId}">
+						<input type="hidden" name="brand" th:value="*{brand}">
+						<input type="hidden" name="page" th:value="${(itemPage.number + 1) + 1 }">
+						<li class="next"><button type="submit">next&rarr; </button></li>
+					</form>
 				</ul>
 			</nav>
 		</div>
@@ -133,12 +140,20 @@
 		<div class="pages" th:if="${itemPage}">
 			<nav class="page-nav">
 				<ul class="pager" th:if="${itemPage.totalPages > 0}">
-					<li class="previous"><a
-							th:href="@{/(name=${name},category=${category},brand=${brand},page=${(itemPage.number + 1) - 1})}">&larr;
-							prev</a></li>
-					<li class="next"><a
-							th:href="@{/(name=${name},category=${category},brand=${brand},page=${(itemPage.number + 1) + 1 })}">next
-							&rarr;</a></li>
+					<form th:action="@{/serchItem}" method="post" th:object="${searchItemForm}" id="form">
+						<input type="hidden" name="name" th:value="*{name}">
+						<input type="hidden" name="smallId" th:value="*{smallId}">
+						<input type="hidden" name="brand" th:value="*{brand}">
+						<input type="hidden" name="page" th:value="${(itemPage.number + 1) -1 }">
+						<li class="previous"><button type="submit">prev&larr; </button></li> 
+					</form>
+					<form th:action="@{/serchItem}" method="post" th:object="${searchItemForm}" id="form">
+						<input type="hidden" name="name" th:value="*{name}">
+						<input type="hidden" name="smallId" th:value="*{smallId}">
+						<input type="hidden" name="brand" th:value="*{brand}">
+						<input type="hidden" name="page" th:value="${(itemPage.number + 1) + 1 }">
+						<li class="next"><button type="submit">next&rarr; </button></li>
+					</form>
 				</ul>
 			</nav>
 		</div>

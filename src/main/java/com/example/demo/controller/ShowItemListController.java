@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.domain.BigCategory;
@@ -51,8 +50,9 @@ public class ShowItemListController {
 		return "list";
 	}
 
-	@PostMapping("/serchItem")
+	@RequestMapping("/serchItem")
 	public String serchItem(@ModelAttribute("searchItemForm") SerchItemForm form, Model model, Integer page) {
+		
 		List<Item> itemList = showItemListService.showItemList(form);
 
 		// pageがnullもしくは0の場合は1をいれる.
