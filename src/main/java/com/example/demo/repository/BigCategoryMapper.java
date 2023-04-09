@@ -1,5 +1,7 @@
 package com.example.demo.repository;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.example.demo.domain.BigCategory;
@@ -12,6 +14,8 @@ import com.example.demo.domain.BigCategory;
  */
 @Mapper
 public interface BigCategoryMapper {
+
+	List<BigCategory> findAll();
 	
 	public void insert(BigCategory bigCategory);
 	

@@ -5,4 +5,7 @@
 		INSERT INTO big_category (name)
         values (#{name})
 	</insert>
+	<select id="findAll" resultType="com.example.demo.domain.BigCategory">
+      SELECT id,name FROM big_category
+   </select>
 </mapper>

@@ -5,4 +5,10 @@
 		INSERT INTO medium_category (big_category_id,name)
         values (#{bigCategoryId},#{name})
 	</insert>
+	<select id="findById" resultType="com.example.demo.domain.MediumCategory">
+      SELECT id,big_category_id,name FROM medium_category WHERE big_category_id = #{bigCategoryId}
+   </select>
 </mapper>
+
+
+
