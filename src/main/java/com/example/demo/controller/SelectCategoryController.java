@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.domain.MediumCategory;
 import com.example.demo.domain.SmallCategory;
 import com.example.demo.service.SelectCategoryService;
+import com.example.demo.service.ShowItemListService;
 
 /**
  * カテゴリプルダウンの操作を行うコントローラー.
@@ -25,6 +26,7 @@ public class SelectCategoryController {
 	
 	@Autowired
 	private SelectCategoryService selectCategoryService;
+	
 	
 	/**
 	 * 大カテゴリに紐づく中カテゴリを検索します.

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.repository.ItemMapper">
-<insert id="insert">
+	<insert id="insert">
   Insert INTO items (name,condition_id,small_category_id,brand,price,shipping,description)
   values (#{name},#{conditionId},#{smallCategoryId},#{brand},#{price},#{shipping},#{description})
 </insert>
+	<select id="findByNameAndCategoryAndBrand" resultType="com.example.demo.domain.Item">
+      SELECT id,name,condition_id,small_category_id,brand,price,shipping,description 
+      FROM items WHERE name LIKE CONCAT(#{name},'%') AND small_category_id = #{smallId} AND brand LIKE CONCAT(#{brand},'%')
+   </select>
 </mapper>
