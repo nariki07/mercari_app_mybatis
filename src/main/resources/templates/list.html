@@ -115,7 +115,7 @@
 				</thead>
 				<tbody id="items" th:if="${itemPage}">
 					<tr th:each="item:${itemPage.content}">
-						<td class="item-name"><a th:href="@{/detail/?itemId=} + ${item.id}"><span
+						<td class="item-name"><a th:href="@{/detail?itemId=} + ${item.id}"><span
 									th:text="${item.name}"></span></a></td>
 						<td class="item-price"><span th:text="${item.price}"></span></td>
 						<td class="item-category">

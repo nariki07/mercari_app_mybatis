@@ -9,4 +9,8 @@
       SELECT id,name,condition_id,small_category_id,brand,price,shipping,description 
       FROM items WHERE name LIKE CONCAT(#{name},'%') AND small_category_id = #{smallId} AND brand LIKE CONCAT(#{brand},'%')
    </select>
+   <select id="findByItemId" resultType="com.example.demo.domain.Item">
+      SELECT id,name,condition_id,small_category_id,brand,price,shipping,description 
+      FROM items WHERE id = #{itemId}
+   </select>
 </mapper>
