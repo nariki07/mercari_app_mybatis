@@ -20,4 +20,6 @@ public interface ItemMapper {
 	
 	public void insert(Item item);
 	
+	public Item findByItemId(Integer itemId);
+	
 }
