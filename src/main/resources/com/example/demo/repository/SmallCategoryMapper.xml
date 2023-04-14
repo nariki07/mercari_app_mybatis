@@ -8,4 +8,7 @@
 	<select id="findById" resultType="com.example.demo.domain.SmallCategory">
       SELECT id,medium_category_id,name,name_all FROM small_category WHERE medium_category_id = #{mediumCategoryId}
    </select>
+   <select id="findSmallId" resultType="com.example.demo.domain.SmallCategory">
+      SELECT id,medium_category_id,name,name_all FROM small_category WHERE id = #{smallId}
+   </select>
 </mapper>

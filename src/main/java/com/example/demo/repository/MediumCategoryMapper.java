@@ -18,6 +18,8 @@ public interface MediumCategoryMapper {
 	
 	List<MediumCategory> findById(Integer bigCategoryId);
 	
+	MediumCategory findByMediumId(Integer mediumId);
+	
 	public void insert(MediumCategory mediumCategory);
 	
 }

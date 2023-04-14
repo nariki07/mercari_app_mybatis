@@ -18,6 +18,8 @@ public interface SmallCategoryMapper {
 	
 	
 	List<SmallCategory> findById(Integer smallCategoryId);
+	
+	SmallCategory findSmallId(Integer smallId);
 
 	public void insert(SmallCategory smallCategory);
 	

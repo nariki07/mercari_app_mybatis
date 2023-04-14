@@ -17,6 +17,12 @@ import com.example.demo.form.SerchItemForm;
 import com.example.demo.service.SelectCategoryService;
 import com.example.demo.service.ShowItemListService;
 
+/**
+ * 商品表示を行うコントローラー.
+ * 
+ * @author moriharanariki
+ *
+ */
 @Controller
 @RequestMapping("")
 public class ShowItemListController {
