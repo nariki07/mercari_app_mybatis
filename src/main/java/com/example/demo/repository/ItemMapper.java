@@ -22,4 +22,6 @@ public interface ItemMapper {
 	
 	public Item findByItemId(Integer itemId);
 	
+	public void update(Item item);
+	
 }

@@ -8,6 +8,9 @@
 	<select id="findById" resultType="com.example.demo.domain.MediumCategory">
       SELECT id,big_category_id,name FROM medium_category WHERE big_category_id = #{bigCategoryId}
    </select>
+   <select id="findByMediumId" resultType="com.example.demo.domain.MediumCategory">
+      SELECT id,big_category_id,name FROM medium_category WHERE id = #{mediumId}
+   </select>
 </mapper>
 
 

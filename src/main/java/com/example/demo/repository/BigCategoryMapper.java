@@ -17,6 +17,8 @@ public interface BigCategoryMapper {
 
 	List<BigCategory> findAll();
 	
+	BigCategory findByBigId(Integer bigId);
+	
 	public void insert(BigCategory bigCategory);
 	
 }

@@ -8,4 +8,7 @@
 	<select id="findAll" resultType="com.example.demo.domain.BigCategory">
       SELECT id,name FROM big_category
    </select>
+   <select id="findByBigId" resultType="com.example.demo.domain.BigCategory">
+      SELECT id,name FROM big_category WHERE id = #{bigId}
+   </select>
 </mapper>

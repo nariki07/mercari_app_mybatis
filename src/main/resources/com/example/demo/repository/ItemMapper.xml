@@ -9,8 +9,12 @@
       SELECT id,name,condition_id,small_category_id,brand,price,shipping,description 
       FROM items WHERE name LIKE CONCAT(#{name},'%') AND small_category_id = #{smallId} AND brand LIKE CONCAT(#{brand},'%')
    </select>
-   <select id="findByItemId" resultType="com.example.demo.domain.Item">
+	<select id="findByItemId" resultType="com.example.demo.domain.Item">
       SELECT id,name,condition_id,small_category_id,brand,price,shipping,description 
       FROM items WHERE id = #{itemId}
    </select>
+	<update id="update">
+		UPDATE items SET name=#{name},condition_id=#{conditionId},small_category_id=#{smallCategoryId},brand=#{brand},price=#{price},
+		shipping=#{shipping},description=#{description} WHERE id=#{id}
+	</update>
 </mapper>
